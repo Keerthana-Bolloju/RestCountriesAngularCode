@@ -1,0 +1,41 @@
+<div class="container-fluid black">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-12 col-md-10" *ngIf="currentCountry">
+      
+        <div class="card border" *ngFor="let present of currentCountry">
+            <img class="card-img-top" src="{{present.flag}}" alt="Card image cap" >
+                <div class="card-body text-center">
+                  <h3 class="card-title">{{present.name}}</h3>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Native name : {{present.nativeName}}</li>
+                      <li class="list-group-item">Language: 
+                          <a [routerLink] = "['/allcountries/language',language.iso639_1]"  *ngFor='let language of present.languages; let last = last;'>
+                            {{language.name}}{{last ? '' : ', '}}
+                          </a>
+                      </li>
+                      <li class="list-group-item">Currency: 
+                          <a [routerLink] = "['/allcountries/currency',currency.code]"  *ngFor='let currency of present.currencies; let last = last;'>
+                            {{currency.name}}{{last ? '' : ', '}}
+                          </a>
+                      </li>
+                      <li class="list-group-item">Capital : {{present.capital}}</li>
+                      <li class="list-group-item">Region : {{present.region}}</li>
+                      <li class="list-group-item">Sub-Region : {{present.subregion}}</li>
+                      <li class="list-group-item">TimeZones : {{present.timezones}}</li>
+                      <li class="list-group-item">Area : {{present.area}}</li>
+                      <li class="list-group-item">Population : {{present.population}}</li>
+                      <li class="list-group-item">Calling Codes : {{present.callingCodes}}</li>
+                      <li class="list-group-item">TimeZones : {{present.timezones}}</li>
+                      <li class="list-group-item">Demonym : {{present.demonym}}</li>
+                    </ul>
+                </div>
+              </div>
+    </div>
+
+    <div class="col-md-1"></div>
+  </div>
+</div>
+</div>

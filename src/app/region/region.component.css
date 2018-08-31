@@ -1,0 +1,21 @@
+.black{
+    background-color: #000000;
+    font-style: italic;
+    color: darkgoldenrod;
+}
+.col-md-6{
+    padding-bottom: 20px;
+}
+.container-fluid{
+    padding: 4vw;
+}
+.card-img-top{
+    padding: 20px;
+}
+.card{
+    background-color: black;
+}
+.card:hover{
+    background-color: white;
+    border-radius: 20px;
+}

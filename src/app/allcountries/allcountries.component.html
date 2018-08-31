@@ -1,0 +1,32 @@
+<div class="container-fluid black">
+      <div class="row">
+          <div class="col-6 col-md-3"  *ngFor="let country of allCountries">
+
+            <!--Div card starts-->
+            <div class="card text-center border">
+                <img class="card-img-top" src={{country.flag}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{country.name}}</h5>
+                  <p class="card-text">Capital: {{country.capital}}</p>
+                  <p class="card-text">Languages:
+                    <a [routerLink]="['/allcountries/language',language.iso639_1]" *ngFor="let language of country.languages;let first=first;let last=last;">
+                      {{language.name}}{{last? '':','}}
+                    </a>                    
+                  </p>
+                  <p class="card-text">Currencies:
+                    <a [routerLink]="['/allcountries/currency',currency.code]" *ngFor="let currency of country.currencies;let first=first;let last=last;">
+                      {{currency.name}}{{last? '':','}}
+                    </a>
+                  </p>
+                  <a class="btn btn-warning" [routerLink]="['/single-country-view',country.name]">Read More</a>
+                </div>
+              </div>
+            <!--Div card ends-->
+
+            
+
+          </div>
+          <br>
+          <hr>
+        </div>
+</div> 
